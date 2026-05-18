@@ -122,17 +122,19 @@ def main():
 
     # 7. Display final statistics summary
     display_section_separator("7. Final Simulation Summary")
-    print(f"Network Size              : {len(packetpath_graph.adjacency_list)} Substations")
-    print(f"Fault Location            : {fault_node}")
-    print(f"Distance to Fault         : {bfs.calculate_hop_count(shortest_path)} hops")
-    print(f"Total Affected Zones      : {len(affected_zones)}")
-    print(f"Repair Crews Dispatched   : {len(repair_crews)}")
+    print(f"Network Size                  : {len(packetpath_graph.adjacency_list)} Substations")
+    print(f"Fault Location                : {fault_node}")
+    print(f"Distance to Fault             : {bfs.calculate_hop_count(shortest_path)} hops")
+    print(f"Total Affected Zones          : {len(affected_zones)}")
+    print(f"Repair Crews Dispatched       : {len(repair_crews)}")
+    print(f"Fastest Pathfinding Algorithm : BFS")
+    print(f"Brute Force Performance       : Slower due to exhaustive traversal")
     
     avg_waiting = scheduler.calculate_average_waiting_time(repair_crews)
     avg_turnaround = scheduler.calculate_average_turnaround_time(repair_crews)
     
-    print(f"Average Crew Waiting Time : {avg_waiting:.2f} hrs")
-    print(f"Average Turnaround Time   : {avg_turnaround:.2f} hrs")
+    print(f"Average Crew Waiting Time     : {avg_waiting:.2f} hrs")
+    print(f"Average Turnaround Time       : {avg_turnaround:.2f} hrs")
     print()
     
     print("=" * 70)
